@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Campeonato.Models.Placar>
+
+@{
+    ViewData["Title"] = "Ranking Global";
+}
+
+
+<h2>Raking Global</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Jogador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPontos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorarioId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Jogador.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPontos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HorarioId)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
